@@ -25,7 +25,7 @@
         <nav class="toc" aria-label="Table of contents">
           <ul>
             <li><a href="#getting-started">Getting Started with AI Assistants</a></li>
-            <li><a href="#credit-management">Prompt Credit Management</a></li>
+            <li><a href="#credit-management">Viewing Cascade credits inside Windsurf Settings</a></li>
             <li><a href="#model-selection">Selecting the Right Model</a></li>
             <li><a href="#prompt-design">Crafting Effective Prompts</a></li>
             <li><a href="#rules-mcp">Rules & MCP Usage</a></li>
@@ -211,15 +211,85 @@
 
         <section id="credit-management" class="content-section">
           <div class="section-header">
-            <h2>Prompt Credit Management</h2>
+            <h2>Viewing Cascade credits inside Windsurf Settings</h2>
             <span class="tag tag-warning">Budget</span>
           </div>
           <p class="section-summary">
-            Capture strategies for tracking credit usage, budgeting sessions, and staying
-            within limits while maintaining productivity.
+            Learn how to read Cascade's Plan information inside Windsurf so you can understand
+            personal versus shared credits and when your allocation renews.
           </p>
-          <div class="content-placeholder" role="group" aria-label="Credit management content">
-            <!-- TODO: Outline dashboards, alert ideas, and case studies for efficient credit usage. -->
+          <div class="content-placeholder has-content" role="group" aria-label="Credit management content">
+            <div class="subsection">
+              <p>
+                When you use Cascade from within Windsurf, your available AI credit usage is summarized in
+                the <strong>Plan</strong> portion of the Cascade section. Open the Windsurf settings (gear icon) and navigate to the Cascade section
+                to see how many credits you have left in total, how many
+                personal prompt credits remain, how many shared add-on credits are available, and
+                when your current plan period ends.
+              </p>
+              <figure class="screenshot-figure">
+                <img
+                  src="images/cascade-plan-breakdown.png"
+                  alt="Cascade Plan panel showing total credits left, personal prompt credits, and add-on credits breakdown."
+                />
+                <figcaption>
+                  Example of the Cascade <strong>Plan</strong> panel in Windsurf, showing total
+                  credits left along with separate personal prompt credits and shared add-on
+                  credits.
+                </figcaption>
+              </figure>
+
+              <div class="subsection-grid" role="group" aria-label="Cascade plan breakdown">
+                <article class="info-card" role="article">
+                  <h4>Understanding the Plan breakdown</h4>
+                  <p>
+                    A typical Plan section might show something like:
+                  </p>
+                  <ul>
+                    <li><strong>9,552.5 credits left</strong> &mdash; headline total currently available.</li>
+                    <li>
+                      <strong>1,000 / 1,000 prompt credits left</strong> &mdash; your personal
+                      Cascade allocation for this billing period, with the numerator showing what
+                      you have left and the denominator showing the full allowance.
+                    </li>
+                    <li>
+                      <strong>8,552.5 add-on credits available</strong> &mdash; a shared pool of
+                      credits your organization has purchased for all eligible users.
+                    </li>
+                  </ul>
+                  <p>
+                    In this example, your personal bucket is full, and there is also a sizeable
+                    enterprise pool that everyone can draw from when allowed.
+                  </p>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Personal vs enterprise credits</h4>
+                  <p>
+                    It helps to separate credits into two buckets when you are planning your work
+                    in Windsurf:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Personal prompt credits</strong> are tied to your individual account
+                      and typically reset on a fixed schedule. Use these for day-to-day coding
+                      help, learning, and exploratory work.
+                    </li>
+                    <li>
+                      <strong>Add-on (enterprise) credits</strong> belong to your organization and
+                      are shared across many users. Teams often reserve this pool for
+                      higher-priority efforts such as client deliverables, production incidents,
+                      or critical internal initiatives.
+                    </li>
+                  </ul>
+                  <p>
+                    When your personal credits reach zero, any continued usage may start to draw
+                    from the enterprise pool, depending on how your organization has configured
+                    access.
+                  </p>
+                </article>
+              </div>
+            </div>
           </div>
         </section>
 
