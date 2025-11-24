@@ -208,6 +208,85 @@ body {
   background: rgba(15, 23, 42, 0.3);
 }
 
+.content-placeholder.has-content {
+  border-style: solid;
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.5);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.subsection {
+  display: grid;
+  gap: clamp(18px, 3vw, 28px);
+}
+
+.subsection h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+}
+
+.subsection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  padding: clamp(18px, 2.8vw, 24px);
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  display: grid;
+  gap: 12px;
+}
+
+.info-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  display: grid;
+  gap: 10px;
+}
+
+.relationship-callout {
+  border-radius: var(--radius-md);
+  padding: clamp(18px, 3vw, 28px);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.14));
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  display: grid;
+  gap: 14px;
+}
+
+.relationship-callout h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.relationship-callout p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.relationship-callout ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  display: grid;
+  gap: 10px;
+}
+
 .callout-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

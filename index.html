@@ -53,8 +53,72 @@
             Document the basics of onboarding to Windsurf and Cascade, including account
             setup, first prompts, and early wins.
           </p>
-          <div class="content-placeholder" role="group" aria-label="Getting started content">
-            <!-- TODO: Add tooling comparisons, checklists, and quick-start guidance. -->
+          <div class="content-placeholder has-content" role="group" aria-label="Getting started content">
+            <div class="subsection">
+              <h3>Using the Windsurf IDE with Cascade</h3>
+              <p>
+                Windsurf provides the project workspace where files live, while Cascade extends
+                that workspace with conversational problem-solving. Understanding how the two
+                layers interact keeps your AI teammate aligned with the code you are actively
+                shaping.
+              </p>
+
+              <div class="subsection-grid" role="group" aria-label="Windsurf and Cascade overview">
+                <article class="info-card" role="article">
+                  <h4>Working inside the Windsurf workspace</h4>
+                  <p>
+                    Each Windsurf project maps to a folder on disk. The IDE mirrors your
+                    repository tree, tracks open editors, and highlights file changes in real
+                    time.
+                  </p>
+                  <ul>
+                    <li>Keep related experiments in the same workspace so context stays local.</li>
+                    <li>
+                      Use the file explorer to stage what Cascade should reference—open files are
+                      prioritized when the assistant composes responses.
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Collaborating with the Cascade assistant</h4>
+                  <p>
+                    Cascade conversations sit alongside the workspace. Each thread retains the
+                    code, diffs, and rules you surface during the session, so you can iterate
+                    without repeating setup steps.
+                  </p>
+                  <ul>
+                    <li>Start a fresh thread per feature or bug to keep histories focused.</li>
+                    <li>
+                      Share current files or snippets explicitly when switching tasks to refresh
+                      Cascade’s context window.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="relationship-callout" role="note">
+                <h4>How the workspace and conversations connect</h4>
+                <p>
+                  Cascade relies on the active Windsurf workspace to ground its suggestions. A
+                  clean mental model prevents cross-talk between projects.
+                </p>
+                <ol>
+                  <li>
+                    Open the correct folder in Windsurf before prompting Cascade—its file access
+                    stays scoped to that project path.
+                  </li>
+                  <li>
+                    Keep prompts anchored to files that are open or recently edited to make the
+                    assistant’s diff proposals precise.
+                  </li>
+                  <li>
+                    When you pivot to a new repository, create a new Windsurf workspace and start
+                    a fresh Cascade conversation so historical context does not bleed over.
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </section>
 
