@@ -100,23 +100,110 @@
               <div class="relationship-callout" role="note">
                 <h4>How the workspace and conversations connect</h4>
                 <p>
-                  Cascade relies on the active Windsurf workspace to ground its suggestions. A
-                  clean mental model prevents cross-talk between projects.
+                  Cascade can answer general questions from the internet or its own knowledge,
+                  but its code-aware help is grounded in the Windsurf workspace you have open.
+                  Keeping that mapping clear helps avoid mixing context between projects.
                 </p>
                 <ol>
                   <li>
-                    Open the correct folder in Windsurf before prompting Cascade—its file access
-                    stays scoped to that project path.
+                    Open the correct folder in Windsurf before asking Cascade about code. Its
+                    structured file access is scoped to the current project path, not your whole
+                    machine.
                   </li>
                   <li>
-                    Keep prompts anchored to files that are open or recently edited to make the
-                    assistant’s diff proposals precise.
+                    When you want edits, anchor prompts to specific files or snippets that are
+                    open or recently edited so Cascade can propose precise diffs instead of
+                    guessing where changes belong.
                   </li>
                   <li>
-                    When you pivot to a new repository, create a new Windsurf workspace and start
-                    a fresh Cascade conversation so historical context does not bleed over.
+                    When you switch repositories, open a new Windsurf workspace and start a fresh
+                    Cascade conversation. This keeps each thread focused and prevents historical
+                    context from one project leaking into another.
                   </li>
                 </ol>
+                <div class="tip-callout" role="note">
+                  <p>
+                    <strong>Tip:</strong> Ask Cascade general questions (for example, about Git or
+                    AI concepts) in any conversation, but when you want it to change code, mention
+                    the specific file or snippet in your open workspace so that its proposals line
+                    up with your repository layout.
+                  </p>
+                </div>
+              </div>
+
+              <div class="subsection lifecycle-subsection" aria-label="Project and conversation life cycles">
+                <h3>Project Life Cycle vs Conversation Life Cycle</h3>
+                <p>
+                  A project often lives for months or years, but an individual Cascade conversation
+                  is usually scoped to a narrower slice of that work&mdash;a feature, a bug, or a short
+                  learning goal. Treat conversations as chapters inside the longer story of your
+                  project.
+                </p>
+
+                <div class="subsection-grid" role="group" aria-label="Lifecycle comparisons">
+                  <article class="info-card" role="article">
+                    <h4>Long-lived projects</h4>
+                    <p>
+                      Your Windsurf workspace can stay open for the entire life of a repository
+                      (weeks or months). Files, history, and tooling evolve, but the project
+                      identity stays the same.
+                    </p>
+                    <ul>
+                      <li>
+                        Think of the project as the stable home for your code, tests, and
+                        documentation across many releases.
+                      </li>
+                      <li>
+                        Expect to reopen the same workspace repeatedly as you maintain and extend
+                        the system.
+                      </li>
+                    </ul>
+                  </article>
+
+                  <article class="info-card" role="article">
+                    <h4>Shorter-lived conversations</h4>
+                    <p>
+                      Cascade conversations are best kept focused. A single thread might follow
+                      one feature, bug fix, or experiment over a few hours or days.
+                    </p>
+                    <ul>
+                      <li>
+                        Reuse a conversation while you are actively iterating on the same story,
+                        so Cascade remembers previous context and decisions.
+                      </li>
+                      <li>
+                        Retire a conversation when its goal is complete or the topic has drifted
+                        far from its original purpose.
+                      </li>
+                    </ul>
+                  </article>
+                </div>
+
+                <div class="relationship-callout lifecycle-guidance" role="note">
+                  <h4>When to start a new conversation</h4>
+                  <ol>
+                    <li>
+                      <strong>New feature or story:</strong> When you begin work on a distinct
+                      feature or user story (for example, "add search to the knowledge base"),
+                      create a dedicated conversation so its history mirrors that task.
+                    </li>
+                    <li>
+                      <strong>Context reset:</strong> If a thread has become long and meandering,
+                      or you have switched to an unrelated area of the codebase, start a fresh
+                      conversation with a short summary of where the project stands.
+                    </li>
+                    <li>
+                      <strong>Long-running maintenance:</strong> Over months of supporting the
+                      same project, expect to open many conversationsfor incidents, refactors,
+                      and experimentswhile keeping the same Windsurf workspace.
+                    </li>
+                    <li>
+                      <strong>Short, intense bursts:</strong> If you are focused on a single bug or
+                      story for a few days, it is usually helpful to keep one conversation open for
+                      that entire burst so Cascade can build up a rich, task-specific memory.
+                    </li>
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
