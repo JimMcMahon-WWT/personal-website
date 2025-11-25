@@ -302,8 +302,127 @@
             Provide guidance on matching model capabilities to tasks, weighing cost versus
             quality, and navigating free versus paid options.
           </p>
-          <div class="content-placeholder" role="group" aria-label="Model selection content">
-            <!-- TODO: Add comparison tables, flowcharts, and sample decision matrices. -->
+          <div class="content-placeholder has-content" role="group" aria-label="Model selection content">
+            <div class="subsection">
+              <h3>Understanding model families</h3>
+              <p>
+                The model picker in Cascade may list several <em>model series</em> side by sidefor
+                example, GPT models from OpenAI, Claude models from Anthropic, and Sonnet or other
+                vendor-specific lines. Each series is trained by a different provider, but you can
+                think of them as offering similar tiers:
+              </p>
+              <ul>
+                <li>
+                  <strong>General models</strong> for everyday conversation, explanation, and light
+                  coding help.
+                </li>
+                <li>
+                  <strong>Reasoning models</strong> for harder problems that need multi-step logic,
+                  tradeoff analysis, or careful planning.
+                </li>
+                <li>
+                  <strong>Code-oriented models</strong> tuned for reading and writing code,
+                  refactors, and test generation.
+                </li>
+                <li>
+                  <strong>"Mini" or fast models</strong> that are cheaper and lower-latency, best
+                  for simple or repetitive tasks.
+                </li>
+              </ul>
+
+              <div class="subsection-grid" role="group" aria-label="Model option examples">
+                <article class="info-card" role="article">
+                  <h4>Interpreting model names</h4>
+                  <p>
+                    Model names often combine a base line with hints about their strengths. For
+                    example names like these follow common patterns:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>GPT-5 (high reasoning)</strong> &mdash; same core family as other
+                      GPT-5 models, but configured to spend more compute on deep reasoning and
+                      planning. Good for tricky bugs, architecture reviews, and complex analysis.
+                    </li>
+                    <li>
+                      <strong>GPT-5 (low reasoning)</strong> &mdash; optimized for speed and lower
+                      cost. Best for straightforward questions, simple refactors, or quick
+                      clarifications.
+                    </li>
+                    <li>
+                      <strong>GPT-5-Codex</strong> &mdash; a variant tuned specifically for code.
+                      Prefer this when your prompt is mostly code, tests, or refactoring requests
+                      in a supported language.
+                    </li>
+                    <li>
+                      <strong>GPT-5.1-Codex-Mini</strong> &mdash; a smaller, faster code model. A
+                      good default for iterative development where you want low latency and are
+                      comfortable reviewing and correcting the results.
+                    </li>
+                  </ul>
+                  <p>
+                    Other series such as Claude or Sonnet follow similar ideas: larger versions for
+                    quality and reasoning, smaller ones for speed and cost, and special variants
+                    focused on code or other tasks.
+                  </p>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Using cost and labels to choose</h4>
+                  <p>
+                    Each model entry also includes a <strong>cost indicator</strong> such as
+                    <code>Free</code>, <code>0.5x</code>, <code>1x</code>, <code>2x</code>, or
+                    <code>3x</code>. This tells you how many credits that model uses relative to a
+                    baseline model:
+                  </p>
+                  <ul>
+                    <li><strong>Free</strong> &mdash; does not consume paid credits while free usage is available.</li>
+                    <li><strong>0.5x</strong> &mdash; about half the cost of a 1x baseline model for the same prompt size.</li>
+                    <li><strong>2x, 3x</strong> &mdash; two or three times the baseline cost, in exchange for higher quality, better reasoning, or both.</li>
+                  </ul>
+                  <p>
+                    A simple rule of thumb for beginners is:
+                  </p>
+                  <ul>
+                    <li>
+                      Start with a <strong>1x general or code model</strong> for most work.
+                    </li>
+                    <li>
+                      Drop to a <strong>0.5x or mini</strong> option for quick, low-stakes
+                      questions when you want to conserve credits.
+                    </li>
+                    <li>
+                      Switch to a <strong>2x or 3x reasoning model</strong> when you are stuck on a
+                      difficult problem and expect better reasoning to save you more time than the
+                      extra credits cost.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="relationship-callout lifecycle-guidance" role="note">
+                <h4>Switching models within one conversation</h4>
+                <p>
+                  You are not locked into a single model for the life of a conversation. In most
+                  Cascade workflows, the model you pick in the dropdown applies to the next
+                  message, while the conversation history remains the same.
+                </p>
+                <ol>
+                  <li>
+                    Use a <strong>cheaper or mini model</strong> early on to explore the problem,
+                    gather context, and try quick ideas.
+                  </li>
+                  <li>
+                    When you reach a hard question or a critical decision, switch to a
+                    <strong>higher reasoning</strong> or <strong>larger code model</strong> for a
+                    few key prompts.
+                  </li>
+                  <li>
+                    After the heavy lifting is done, you can return to a faster model for follow-up
+                    questions and small tweaks, without starting a new conversation.
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </section>
 
