@@ -608,8 +608,95 @@
             Explain how to configure rules and leverage MCPs to align AI behavior with your
             workflow preferences.
           </p>
-          <div class="content-placeholder" role="group" aria-label="Rules and MCP content">
-            <!-- TODO: Add diagrams, configuration snippets, and operational checklists. -->
+          <div class="content-placeholder has-content" role="group" aria-label="Rules and MCP content">
+            <div class="subsection">
+              <h3>What rules and MCPs are</h3>
+              <p>
+                Rules and MCPs give you two complementary levers for shaping Cascade’s behavior in
+                Windsurf:
+              </p>
+              <ul>
+                <li>
+                  <strong>Rules</strong> describe how the assistant should behave in a particular
+                  workspace or conversation (tone, safety boundaries, review steps, and so on).
+                </li>
+                <li>
+                  <strong>MCPs (Model Context Protocol servers)</strong> expose tools and data
+                  sources&mdash;for example, a documentation index, an API client, or a log
+                  explorer&mdash;that Cascade can call on your behalf.
+                </li>
+              </ul>
+
+              <div class="subsection-grid" role="group" aria-label="Rules and MCP overview">
+                <article class="info-card" role="article">
+                  <h4>Working with rules as a beginner</h4>
+                  <p>
+                    You can think of rules as a lightweight contract between you and Cascade for a
+                    given project.
+                  </p>
+                  <ul>
+                    <li>
+                      Start simple: capture just a few expectations such as preferred language,
+                      code style, and how cautious Cascade should be when editing files.
+                    </li>
+                    <li>
+                      Use rules to reinforce team norms (for example, "always suggest tests with
+                      new features" or "do not change production configs without being asked").
+                    </li>
+                    <li>
+                      Treat rules as living documentation: revisit them when you notice patterns
+                      in how you correct or steer the assistant.
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Working with MCPs as a beginner</h4>
+                  <p>
+                    MCP servers make tools and data available to Cascade in a structured way so it
+                    can do more than just read and write files.
+                  </p>
+                  <ul>
+                    <li>
+                      Browse the available MCPs in the Cascade or Windsurf settings UI and enable
+                      only those you understand and actually need.
+                    </li>
+                    <li>
+                      Start with low-risk utilities (for example, documentation or search tools)
+                      before enabling anything that can modify infrastructure or external systems.
+                    </li>
+                    <li>
+                      When you enable a tool, read its description and think about what data it
+                      can access and what side effects it might have.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="relationship-callout" role="note">
+                <h4>Day-to-day workflow with rules and MCPs</h4>
+                <p>
+                  As a beginner, you do not need an elaborate ruleset or a long list of tools.
+                  Focus on a few rules that reflect how you want to work and a small set of
+                  well-understood MCPs.
+                </p>
+                <ol>
+                  <li>
+                    Define project-level rules that capture what "good" looks like for this repo
+                    (style, testing expectations, risk tolerance for edits).
+                  </li>
+                  <li>
+                    Enable only the MCPs that directly support your current tasks and disable
+                    unused ones to keep the tool surface small.
+                  </li>
+                  <li>
+                    When something goes wrong or feels off, update the rules or MCP configuration
+                    instead of just correcting Cascade in the moment. That way the adjustment helps
+                    on future prompts too.
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </section>
 
