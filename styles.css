@@ -395,3 +395,69 @@ body {
     gap: 10px;
   }
 }
+
+@media print {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  /* Hide navigation chrome and use a simple single-column layout */
+  .sidebar {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+    padding: 0;
+  }
+
+  .content {
+    display: block;
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 0.75in 0.5in 0.75in;
+  }
+
+  /* Soften card styling for print while keeping structure recognizable */
+  .intro,
+  .content-section {
+    background: #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #dddddd;
+    padding: 0 0 16px;
+    margin-bottom: 16px;
+  }
+
+  .section-header {
+    margin-bottom: 4px;
+  }
+
+  .tag {
+    background: #f4f4f4;
+    color: #000000;
+    border-color: #bbbbbb;
+  }
+
+  /* Flatten multi-column grids into a stacked layout for reliable pagination */
+  .subsection-grid,
+  .callout-grid,
+  .resource-columns {
+    display: block;
+  }
+
+  .subsection-grid > *,
+  .callout-grid > *,
+  .resource-columns > * {
+    margin-bottom: 12px;
+  }
+
+  .screenshot-figure img {
+    max-width: 100%;
+    height: auto;
+  }
+}
