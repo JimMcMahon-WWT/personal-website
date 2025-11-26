@@ -433,8 +433,169 @@
             Share prompt templates, iterative refinement examples, and principles for
             communicating goals to AI teammates.
           </p>
-          <div class="content-placeholder" role="group" aria-label="Prompt design content">
-            <!-- TODO: Showcase prompt anatomy, iteration logs, and reusable templates. -->
+          <div class="content-placeholder has-content" role="group" aria-label="Prompt design content">
+            <div class="subsection">
+              <h3>A simple pattern for effective prompts</h3>
+              <p>
+                Prompts work best when they read like a short work order: what you want, why you
+                want it, and any constraints that matter. In Windsurf, you can treat most prompts
+                to Cascade as having four pieces.
+              </p>
+
+              <div class="subsection-grid" role="group" aria-label="Prompt pattern breakdown">
+                <article class="info-card" role="article">
+                  <h4>Goal and context</h4>
+                  <p>
+                    Start by telling Cascade what you are trying to achieve and what it needs to
+                    know about the project.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Goal:</strong> Describe the outcome you want (for example, debug a
+                      failing test, refactor a function, or draft documentation).
+                    </li>
+                    <li>
+                      <strong>Context:</strong> Point to the relevant files, snippets, or error
+                      messages. Mention file names like <code>index.html</code> or
+                      <code>auth.spec.ts</code> so edits land in the right place.
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Constraints and action</h4>
+                  <p>
+                    Next, shape how the assistant should respond and what you want it to do right
+                    now.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Constraints:</strong> Call out any limits or preferences (no new
+                      dependencies, beginner-friendly language, specific file formats).
+                    </li>
+                    <li>
+                      <strong>Action:</strong> Ask for a concrete step such as proposing a
+                      refactor, listing debugging steps, or outlining a plan before writing code.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="relationship-callout" role="note">
+                <h4>Iterate instead of asking for everything at once</h4>
+                <p>
+                  Many of the best prompts are short, iterative turns rather than one giant
+                  request. Use early prompts to align on understanding, then deepen the work.
+                </p>
+                <ol>
+                  <li>
+                    Start small: ask Cascade to explain a function, list edge cases, or sketch a
+                    high-level approach before requesting large code changes.
+                  </li>
+                  <li>
+                    Refine based on the answer: clarify what was right or wrong and narrow the
+                    focus to a single file, component, or test.
+                  </li>
+                  <li>
+                    When stakes are high, request a plan first (for example, "outline the steps
+                    you would take to fix this bug") and only then ask for concrete diffs.
+                  </li>
+                </ol>
+              </div>
+
+              <div class="subsection-grid" role="group" aria-label="Prompt hygiene examples">
+                <article class="info-card" role="article">
+                  <h4>Be explicit about what you do and do not want</h4>
+                  <p>
+                    Cascade will fill in gaps. If certain paths are off-limits, say so in the
+                    prompt.
+                  </p>
+                  <ul>
+                    <li>
+                      "Do <strong>not</strong> change behavior, only rename variables and add
+                      comments."
+                    </li>
+                    <li>
+                      "Do not use recursion; keep the solution iterative."
+                    </li>
+                    <li>
+                      "Don’t write code yet&mdash;just outline the approach and tradeoffs."
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Show, don’t just tell</h4>
+                  <p>
+                    Prompts are much stronger when you include concrete examples.
+                  </p>
+                  <ul>
+                    <li>
+                      Paste a short example of the code style or documentation you like and ask
+                      Cascade to match it.
+                    </li>
+                    <li>
+                      Tell Cascade who the explanation is for (for example, a junior developer
+                      new to React or a non-technical stakeholder).
+                    </li>
+                    <li>
+                      When adopting a pattern across files, show one completed example and ask for
+                      the same pattern elsewhere.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="subsection-grid" role="group" aria-label="Using images and terminal output in prompts">
+                <article class="info-card" role="article">
+                  <h4>Sharing images with Cascade</h4>
+                  <p>
+                    Screenshots can compress a lot of context into a single prompt: error
+                    dialogs, UI states, or diagrams that are hard to describe in text.
+                  </p>
+                  <ul>
+                    <li>
+                      When possible, pair the image with a short caption that states what you
+                      want Cascade to notice (for example, "focus on the stack trace in the lower
+                      right" or "look at the highlighted field validation error").
+                    </li>
+                    <li>
+                      Avoid sending huge, cluttered screenshots without guidance. Narrow the
+                      question so Cascade knows whether you care about layout, text, or a specific
+                      widget.
+                    </li>
+                    <li>
+                      For diagrams or whiteboard sketches, briefly restate the key relationships
+                      in text so the assistant can cross-check its interpretation.
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="info-card" role="article">
+                  <h4>Sharing terminal output and logs</h4>
+                  <p>
+                    Terminal output is often the fastest way to ground a debugging prompt, but it
+                    helps to trim it to the parts that matter.
+                  </p>
+                  <ul>
+                    <li>
+                      Prefer the <strong>first</strong> error message and a small window of lines
+                      around it over full logs. Mention the command you ran and the directory you
+                      were in when it failed.
+                    </li>
+                    <li>
+                      Use code fences (```text or ```bash) when pasting output so Cascade can
+                      distinguish logs from your instructions.
+                    </li>
+                    <li>
+                      If the output is repetitive, share one representative section and describe
+                      the pattern (for example, "this block repeats for every file in the
+                      directory").
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
           </div>
         </section>
 
